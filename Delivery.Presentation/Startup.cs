@@ -38,7 +38,7 @@ namespace Delivery.Presentation
                 cfg.AddProfile<Mapping>();
             })));
             services.AddCors();
-            services.AddControllers();
+            //services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
@@ -47,36 +47,36 @@ namespace Delivery.Presentation
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            app.UseSwagger();
+    //    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    //    {
+    //        app.UseSwagger();
 
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            });
+    //        app.UseSwaggerUI(c =>
+    //        {
+    //            c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+    //        });
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+    //        //if (env.IsDevelopment())
+    //        //{
+    //        //    app.UseDeveloperExceptionPage();
+    //        //}
 
-            app.UseCors(
-                options => options.WithOrigins("*").AllowAnyMethod()
-            );
-            app.UseRouting();
+    //        //app.UseCors(
+    //        //    options => options.WithOrigins("*").AllowAnyMethod()
+    //        //);
+    //        //app.UseRouting();
 
-            app.UseAuthorization();
-            app.UseStaticFiles();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
-            //ApplicationContext context = new ApplicationContext();
-            //bool allowDropRecreatedataBase = true;
-            //if (allowDropRecreatedataBase)
-            //    context.Database.EnsureDeleted();
-            //context.Database.EnsureCreated();
-        }
+    //        //app.UseAuthorization();
+    //        //app.UseStaticFiles();
+    //        //app.UseEndpoints(endpoints =>
+    //        //{
+    //        //    endpoints.MapControllers();
+    //        //});
+    //        //ApplicationContext context = new ApplicationContext();
+    //        //bool allowDropRecreatedataBase = true;
+    //        //if (allowDropRecreatedataBase)
+    //        //    context.Database.EnsureDeleted();
+    //        //context.Database.EnsureCreated();
+    //    }
     }
 }

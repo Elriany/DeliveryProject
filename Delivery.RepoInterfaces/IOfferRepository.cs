@@ -7,6 +7,6 @@ namespace Delivery.RepoInterfaces
 {
     public interface IOfferRepository:IRepository<Offer>
     {
-        public void MarkAsDeleted(Guid id);
+         void MarkAsDeleted(Guid id);
     }
 }

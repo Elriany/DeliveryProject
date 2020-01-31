@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-Delivery.UserInterface-421F9CA6-84F1-498F-A7AD-34B636E12347</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Delivery.Core\Delivery.Core.csproj" />
+    <ProjectReference Include="..\Delivery.Services\Delivery.Services.csproj" />
+  </ItemGroup>
+
+</Project>

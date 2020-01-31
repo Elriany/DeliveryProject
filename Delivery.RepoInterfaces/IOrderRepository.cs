@@ -7,6 +7,6 @@ namespace Delivery.RepoInterfaces
 {
     public interface IOrderRepository:IRepository<Order>
     {
-        public void MarkAsDeleted(Guid id);
+        void MarkAsDeleted(Guid id);
     }
 }

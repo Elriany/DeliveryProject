@@ -8,8 +8,10 @@
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <title>@ViewData["Title"] - Delivery.UI</title>
     <!-- Favicons -->
+
     <link href="~/img/favicon.png" rel="icon">
-    
+    @*<link href="~/img/favicon.png" rel="icon">*@
+
     <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
     <!-- Bootstrap core CSS -->
     <link href="~/css/bootstrap.min.css" rel="stylesheet" />
@@ -37,7 +39,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a  asp-controller="customer" asp-action="index" class="logo"><b>DELIV<span>ERY</span></b></a>
+            <a asp-controller="customer" asp-action="index" class="logo"><b>DELIV<span>ERY</span></b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
             </div>
@@ -60,10 +62,10 @@
                     <h5 class="centered">Admin</h5>
                     <li class="mt">
                         <a class="active" asp-controller="customer" asp-action="index">
-                            
-                                <i class="fa fa-tasks"></i>
-                                <span>Customers</span>
-                            
+
+                            <i class="fa fa-tasks"></i>
+                            <span>Customers</span>
+
                         </a>
                     </li>
                 </ul>
@@ -140,45 +142,45 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
-          $("#date-popover").popover({
-            html: true,
-            trigger: "manual"
-          });
-          $("#date-popover").hide();
-          $("#date-popover").click(function(e) {
-            $(this).hide();
-          });
+        $(document).ready(function () {
+            $("#date-popover").popover({
+                html: true,
+                trigger: "manual"
+            });
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
 
-          $("#my-calendar").zabuto_calendar({
-            action: function() {
-              return myDateFunction(this.id, false);
-            },
-            action_nav: function() {
-              return myNavFunction(this.id);
-            },
-            ajax: {
-              url: "show_data.php?action=1",
-              modal: true
-            },
-            legend: [{
-                type: "text",
-                label: "Special event",
-                badge: "00"
-              },
-              {
-                type: "block",
-                label: "Regular event",
-              }
-            ]
-          });
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [{
+                    type: "text",
+                    label: "Special event",
+                    badge: "00"
+                },
+                {
+                    type: "block",
+                    label: "Regular event",
+                }
+                ]
+            });
         });
 
         function myNavFunction(id) {
-          $("#date-popover").hide();
-          var nav = $("#" + id).data("navigation");
-          var to = $("#" + id).data("to");
-          console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     </script>
     @RenderSection("Scripts", required: false)

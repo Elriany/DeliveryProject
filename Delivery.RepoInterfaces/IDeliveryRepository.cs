@@ -7,6 +7,6 @@ namespace Delivery.RepoInterfaces
 {
     public interface IDeliveryRepository: IRepository<Delivery.Core.Delivery>
     {
-        public void MarkAsDeleted(Guid id);
+         void MarkAsDeleted(Guid id);
     }
 }
